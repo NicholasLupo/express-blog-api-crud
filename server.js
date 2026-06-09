@@ -11,7 +11,7 @@ app.listen(port, () => {
 })
 
 app.get('/', (req, res) => {
-    res.send('Hello')
+    res.send('Welcome')
 })
 
 app.use('/post', postRouter);
