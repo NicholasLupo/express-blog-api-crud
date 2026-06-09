@@ -10,14 +10,10 @@ router.get('/', postController.index);
 router.get('/:id', postController.show)
 
 // store
-router.post('/', (req, res) => {
-    res.send(`store a new post`)
-})
+router.post('/', postController.store)
 
 // update
-router.put('/:id', (req, res) => {
-    res.send(`update a new post ${req.params.id}`)
-})
+router.put('/:id', postController.update)
 
 //modify
 router.patch('/:id', (req, res) => {
