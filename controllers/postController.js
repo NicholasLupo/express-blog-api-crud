@@ -23,4 +23,18 @@ const show = (req, res) => {
     res.json(post)
 }
 
-module.exports = { index, show };
+const destroy = (req, res) => {
+    const id = parseInt(req.params.id)
+
+    const post = posts.find(post => post.id === id);
+
+    if (!post) {
+        return res.status(404).json({ error: 'Post not found' });
+    }
+
+    posts.splice(posts.indexOf(post), 1);
+
+    res.sendStatus(204)
+}
+
+module.exports = { index, show, destroy };
